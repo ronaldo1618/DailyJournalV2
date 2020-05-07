@@ -20,8 +20,26 @@ document.getElementById("save-button").addEventListener("click", event => {
     let newJournalEntry = FACTORY.createJournalEntry(date, concept, entry, mood)
     API.postJournalEntries(newJournalEntry)
     .then( dataJS => {
-        console.log(dataJS)
         return API.getJournalEntries(dataJS)
     })
     .then( journalData => DOM.render(journalData))
+})
+
+document.getElementsByName("radio-btn").forEach(radioButton => {
+    radioButton.addEventListener("click", event => {
+        const mood = event.target.value
+        API.getJournalEntries()
+        .then( entry => {
+            let filtered = entry.filter(entry => entry.mood === mood)
+            DOM.render(filtered)})
+    })
+})
+
+document.getElementById("entryLog").addEventListener("click", event => {
+    if (event.target.id.startsWith("delete--")) {
+        const entryId = event.target.id.split("--")[1]
+        API.deleteEntry(entryId)
+        .then(API.getJournalEntries)
+        .then(DOM.render)
+    }
 })
