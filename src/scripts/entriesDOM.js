@@ -8,7 +8,11 @@ const DOM = {
         });
     },
     formValidation(date, concept, entry) {
+        let regEx = /(ratbastard|bitch|motherofallthingsholy)/gi
         if (date == "" || concept == "" || entry == "") {
+            return false;
+        } 
+        if (regEx.test(entry) || regEx.test(concept)) {
             return false;
         } else {
             return true;

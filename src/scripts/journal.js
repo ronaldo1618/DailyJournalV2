@@ -1,6 +1,9 @@
 import API from "./data.js"
 import DOM from "./entriesDOM.js"
 import FACTORY from "./createEntry.js"
+import makeEntry from "./entryComponent.js"
+
+document.getElementById("fieldset-container").innerHTML = makeEntry.formField()
 
 API.getJournalEntries()
 .then(entries => {
