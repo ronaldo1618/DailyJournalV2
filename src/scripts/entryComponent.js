@@ -3,6 +3,7 @@ const makeEntry = {
         return `
             <h1>${journalEntry.concept}</h1>
             <p>${journalEntry.entry}<br>${journalEntry.date}</p>
+            <button id="delete--${journalEntry.id}">Delete</button>
         `
     }
 }

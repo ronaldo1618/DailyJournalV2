@@ -34,6 +34,13 @@
       "entry": "A very informative demo that was over deleting an object from an API.",
       "mood": "happy",
       "id": 5
+    },
+    {
+      "date": "2020-05-07",
+      "concept": "Filter by mood",
+      "entry": "Trying to use filter on my entries.json to filter by mood",
+      "mood": "happy",
+      "id": 6
     }
   ]
 }
