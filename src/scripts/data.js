@@ -16,6 +16,20 @@ const API = {
         return fetch(`http://localhost:3000/entries/${entryId}`, {
             method: "DELETE"
         })
+    },
+    editEntry(id, updatedObject) {
+        return fetch(`http://localhost:3000/entries/${id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(updatedObject)
+        })
+        .then(res => res.json())
+    },
+    getJournalEntry(id) {
+        return fetch(`http://localhost:3000/entries/${id}`)
+        .then(entries => entries.json())
     }
 }
 

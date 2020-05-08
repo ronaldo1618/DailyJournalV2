@@ -18,7 +18,6 @@ const DOM = {
             return true;
         }
     }
-
 }
 
 export default DOM;
