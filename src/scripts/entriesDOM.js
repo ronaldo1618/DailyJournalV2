@@ -3,9 +3,13 @@ import makeEntry from "./entryComponent.js"
 const DOM = {
     render(entries) {
         document.querySelector("#entryLog").innerHTML = ""
-        entries.forEach(entry => {
+        for (let i = 0; i < entries.length; i++) {
+            const entry = entries[i];
             document.querySelector("#entryLog").innerHTML += makeEntry.component(entry)
-        });
+        }
+        // entries.forEach(entry => {
+        //     document.querySelector("#entryLog").innerHTML += makeEntry.component(entry)
+        // });
     },
     formValidation(date, concept, entry) {
         let regEx = /(ratbastard|bitch|motherofallthingsholy)/gi
