@@ -1,38 +1,10 @@
 {
   "entries": [
     {
-      "date": "4/19/2020",
-      "concept": "Query selection",
-      "entry": "Just reading ahead a bit.",
-      "mood": "Determined",
-      "id": 1
-    },
-    {
-      "date": "4/20/2020",
-      "concept": "DOM API manipulation",
-      "entry": "Trying to grasp this concept. Read up more",
-      "mood": "Happy",
-      "id": 2
-    },
-    {
-      "date": "2020-05-05",
-      "concept": "Creating an object stored inside a server",
-      "entry": "Posting to a server",
-      "mood": "excited",
-      "id": 3
-    },
-    {
-      "date": "2020-05-06",
-      "concept": "Array Methods",
-      "entry": "Today we covered different types of array methods",
-      "mood": "happy",
-      "id": 4
-    },
-    {
       "date": "2020-05-07",
-      "concept": "Demo from Bryan",
+      "concept": "Demo from Bryan!!",
       "entry": "A very informative demo that was over deleting an object from an API.",
-      "mood": "happy",
+      "mood": "excited",
       "id": 5
     },
     {
@@ -41,6 +13,20 @@
       "entry": "Trying to use filter on my entries.json to filter by mood",
       "mood": "happy",
       "id": 6
+    },
+    {
+      "date": "2020-05-08",
+      "concept": "Lab Day",
+      "entry": "Today is a lab day. Time to catch up on somethings!",
+      "mood": "excited",
+      "id": 8
+    },
+    {
+      "date": "2020-05-07",
+      "concept": "Array Methods!",
+      "entry": "Using array methods to access data in the API/",
+      "mood": "excited",
+      "id": 9
     }
   ]
 }
