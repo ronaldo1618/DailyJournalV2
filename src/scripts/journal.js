@@ -43,10 +43,6 @@ document.getElementById("save-button").addEventListener("click", event => {
     event.preventDefault() // prevents page refresh
     const hiddenEntryId = document.getElementById("entryId")
     if (hiddenEntryId.value !== "") {
-        //
-        //
-        //
-        //
         editEntry(hiddenEntryId.value)
     } else {
         let date = document.getElementById("journalDate").value
@@ -54,7 +50,6 @@ document.getElementById("save-button").addEventListener("click", event => {
         let entry = document.getElementById("journalEntry").value
         let mood = document.getElementById("mood").value
         if (DOM.formValidation(date, concept, entry) == false) {
-            // event.preventDefault()
             return document.getElementById("entryLog").innerHTML = "<h2>Please make sure to use the right inputs and all fields are filled out properly</h2>"
         }
         let newJournalEntry = FACTORY.createJournalEntry(date, concept, entry, mood)
@@ -79,7 +74,6 @@ document.getElementsByName("radio-btn").forEach(radioButton => {
 
 // Event listener to delete or edit a specific entry
 document.getElementById("entryLog").addEventListener("click", event => {
-    // event.preventDefault()
     if (event.target.id.startsWith("delete--")) {
         const entryId = event.target.id.split("--")[1]
         API.deleteEntry(entryId)
@@ -94,7 +88,6 @@ document.getElementById("entryLog").addEventListener("click", event => {
 document.getElementById("search").addEventListener("keypress", event => {
     
     if (event.charCode === 13) {
-        // event.preventDefault()
         API.getJournalEntries()
         .then(entries => {
         const searchTerm = event.target.value
@@ -104,9 +97,6 @@ document.getElementById("search").addEventListener("keypress", event => {
             }
         })
         DOM.render(foundEntries)
-        // for (const entry of Object.entries(foundEntries)) {
-        //     DOM.render(entry)
-        // }
     })
     }
 })
