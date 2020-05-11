@@ -31,7 +31,11 @@
                 <option value="anxious">Anxious</option>
             </select>
         </fieldset>
-        <fieldset>
+        <button id="save-button">Record Journal Entry</button>
+    </form>
+    <hr>
+    <section id="search-container">
+        <fieldset id="filter-mood">
             <legend>Filter Entries by Mood</legend> 
             <input type="radio" name="radio-btn" value="happy">
             <label for="happy">Happy</label>
@@ -44,12 +48,11 @@
             <input type="radio" name="radio-btn" value="all">
             <label for="all">All</label>
         </fieldset>
-        <button id="save-button">Record Journal Entry</button>
-    </form>
-        <fieldset>
+        <fieldset id="filter-input">
             <legend>Search Journal Entries</legend>
             <input type="text" name="search" value="" id="search">
         </fieldset>
+    </section>
     <article id="entryLog"></article>
     <script type="module" src="scripts/journal.js"></script>
 </body>
