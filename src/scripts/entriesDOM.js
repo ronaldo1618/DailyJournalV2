@@ -3,16 +3,12 @@ import makeEntry from "./entryComponent.js"
 const DOM = {
     render(entries) {
         document.querySelector("#entryLog").innerHTML = ""
-        for (let i = 0; i < entries.length; i++) {
-            const entry = entries[i];
+        entries.forEach(entry => {
             document.querySelector("#entryLog").innerHTML += makeEntry.component(entry)
-        }
-        // entries.forEach(entry => {
-        //     document.querySelector("#entryLog").innerHTML += makeEntry.component(entry)
-        // });
+        });
     },
     formValidation(date, concept, entry) {
-        let regEx = /(ratbastard|bitch|motherofallthingsholy)/gi
+        let regEx = /(ratbastard|bitch|fuck)/gi
         if (date == "" || concept == "" || entry == "") {
             return false;
         } 
