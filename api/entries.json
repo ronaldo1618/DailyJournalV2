@@ -2,7 +2,7 @@
   "entries": [
     {
       "date": "2020-05-07",
-      "concept": "Demo from Bryan!!",
+      "concept": "Demo from Bryan",
       "entry": "A very informative demo that was over deleting an object from an API.",
       "mood": "excited",
       "id": 5
@@ -27,6 +27,13 @@
       "entry": "Using array methods to access data in the API/",
       "mood": "excited",
       "id": 9
+    },
+    {
+      "date": "2020-05-11",
+      "concept": "Going over editing",
+      "entry": "Editing data through a fetch method of put",
+      "mood": "excited",
+      "id": 10
     }
   ]
 }

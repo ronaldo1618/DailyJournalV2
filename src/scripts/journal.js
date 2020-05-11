@@ -40,9 +40,13 @@ const editEntry = id => {
 
 // Event Listener to decide whether to record a new entry or edit an existing one
 document.getElementById("save-button").addEventListener("click", event => {
+    event.preventDefault() // prevents page refresh
     const hiddenEntryId = document.getElementById("entryId")
     if (hiddenEntryId.value !== "") {
-        event.preventDefault()
+        //
+        //
+        //
+        //
         editEntry(hiddenEntryId.value)
     } else {
         let date = document.getElementById("journalDate").value
@@ -50,7 +54,7 @@ document.getElementById("save-button").addEventListener("click", event => {
         let entry = document.getElementById("journalEntry").value
         let mood = document.getElementById("mood").value
         if (DOM.formValidation(date, concept, entry) == false) {
-            event.preventDefault()
+            // event.preventDefault()
             return document.getElementById("entryLog").innerHTML = "<h2>Please make sure to use the right inputs and all fields are filled out properly</h2>"
         }
         let newJournalEntry = FACTORY.createJournalEntry(date, concept, entry, mood)
@@ -75,7 +79,7 @@ document.getElementsByName("radio-btn").forEach(radioButton => {
 
 // Event listener to delete or edit a specific entry
 document.getElementById("entryLog").addEventListener("click", event => {
-    event.preventDefault()
+    // event.preventDefault()
     if (event.target.id.startsWith("delete--")) {
         const entryId = event.target.id.split("--")[1]
         API.deleteEntry(entryId)
@@ -84,6 +88,26 @@ document.getElementById("entryLog").addEventListener("click", event => {
     if (event.target.id.startsWith("edit--")) {
         const entryId = event.target.id.split("--")[1]
         updateEntry(entryId)
+    }
+})
+
+document.getElementById("search").addEventListener("keypress", event => {
+    
+    if (event.charCode === 13) {
+        // event.preventDefault()
+        API.getJournalEntries()
+        .then(entries => {
+        const searchTerm = event.target.value
+        const foundEntries = entries.filter(entry => {
+            if (entry.date.includes(searchTerm) || entry.concept.includes(searchTerm) || entry.mood.includes(searchTerm) || entry.entry.includes(searchTerm)) {
+                return true;
+            }
+        })
+        DOM.render(foundEntries)
+        // for (const entry of Object.entries(foundEntries)) {
+        //     DOM.render(entry)
+        // }
+    })
     }
 })
 

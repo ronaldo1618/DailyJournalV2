@@ -1,0 +1,13 @@
+#search-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#filter-mood {
+    flex-basis: 40%;
+}
+
+#filter-input {
+    flex-basis: 40%;
+}
