@@ -4,7 +4,7 @@ const FACTORY = {
             date: date,
             concept: concept,
             entry: entry,
-            mood: mood
+            moodId: mood
         }
     },
     updatedObject() {
@@ -12,7 +12,7 @@ const FACTORY = {
             date: document.getElementById("journalDate").value,
             concept: document.getElementById("conceptsCovered").value,
             entry: document.getElementById("journalEntry").value,
-            mood: document.getElementById("mood").value
+            moodId: parseInt(document.getElementById("mood").value)
         }
     }
 }

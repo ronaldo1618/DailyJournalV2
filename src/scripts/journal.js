@@ -48,7 +48,7 @@ document.getElementById("save-button").addEventListener("click", event => {
         let date = document.getElementById("journalDate").value
         let concept = document.getElementById("conceptsCovered").value
         let entry = document.getElementById("journalEntry").value
-        let mood = document.getElementById("mood").value
+        let mood = parseInt(document.getElementById("mood").value)
         if (DOM.formValidation(date, concept, entry) == false) {
             return document.getElementById("entryLog").innerHTML = "<h2>Please make sure to use the right inputs and all fields are filled out properly</h2>"
         }
@@ -67,7 +67,7 @@ document.getElementsByName("radio-btn").forEach(radioButton => {
         }
         API.getJournalEntries()
         .then( entry => {
-            let filtered = entry.filter(entry => entry.mood === mood)
+            let filtered = entry.filter(entry => entry.mood.label === mood)
             DOM.render(filtered)})
     })
 })
@@ -92,7 +92,7 @@ document.getElementById("search").addEventListener("keypress", event => {
         .then(entries => {
         const searchTerm = event.target.value
         const foundEntries = entries.filter(entry => {
-            if (entry.date.includes(searchTerm) || entry.concept.includes(searchTerm) || entry.mood.includes(searchTerm) || entry.entry.includes(searchTerm)) {
+            if (entry.date.includes(searchTerm) || entry.concept.includes(searchTerm) || entry.mood.label.includes(searchTerm) || entry.entry.includes(searchTerm)) {
                 return true;
             }
         })
